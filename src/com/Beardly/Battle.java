@@ -16,9 +16,11 @@ public class Battle {
             case 1:
                 System.out.println("Player goes first");
                 this.playerTurn = true;
+                break;
             case 2:
                 System.out.println("monster goes first");
                 this.playerTurn = false;
+                break;
         }
     }
 
