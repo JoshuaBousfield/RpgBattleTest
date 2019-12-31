@@ -5,12 +5,21 @@ public class Enemy {
     private int health;
     private Armour armour;
     private Weapon weapon;
+    private int atk;
+    private int def;
 
-    public Enemy(String name, int health, Armour armour, Weapon weapon) {
+    public Enemy(String name, int health, Armour armour, Weapon weapon, int atk, int def) {
         this.name = name;
         this.health = health;
         this.armour = armour;
         this.weapon = weapon;
+        this.atk = atk;
+        this.def = def;
+    }
+
+    public int attack() {
+        int rollDamage = new Dice(weapon.getDamage(), Math.round(this.atk / 2)).diceRoll();
+        return rollDamage;
     }
 
     public String getName() {
@@ -33,30 +42,35 @@ public class Enemy {
 
 class Goblin extends Enemy {
     public Goblin() {
-        super("Goblin", 26, new GoblinLeather(), new Spear());
+        super("Goblin", 26, new GoblinLeather(), new Spear(), 5, 2);
+    }
+
+    @Override
+    public int attack() {
+        return super.attack();
     }
 }
 
 class Slime extends Enemy {
     public Slime() {
-        super("Slime", 8, new NoArmour(), new NoWeapon());
+        super("Slime", 8, new NoArmour(), new NoWeapon(), 3, 1);
     }
 }
 
 class Bat extends Enemy {
     public Bat() {
-        super("Bat", 11, new NoArmour(), new Claws());
+        super("Bat", 11, new NoArmour(), new Claws(), 3, 2);
     }
 }
 
 class Kobolt extends Enemy {
     public Kobolt() {
-        super("Kobolt", 29, new Leather(), new Sword());
+        super("Kobolt", 29, new Leather(), new Sword(), 5, 4);
     }
 }
 
 class Boar extends Enemy {
     public Boar() {
-        super("Boar", 20, new HardenedSkin(), new Claws());
+        super("Boar", 20, new HardenedSkin(), new Claws(), 3, 3);
     }
 }

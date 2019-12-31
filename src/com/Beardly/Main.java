@@ -3,8 +3,7 @@ package com.Beardly;
 public class Main {
 
     public static void main(String[] args) {
-        Battle battle = new Battle(new Player("Bob", 30, new Leather(), new Sword()), new Goblin());
-        battle.battleStart();
+
         System.out.println("something useless");
     }
 }
