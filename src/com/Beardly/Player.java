@@ -7,6 +7,7 @@ public class Player {
     private Weapon weapon;
     private int atk;
     private int def;
+    private boolean defend;
 
     public Player(String name, int health, Armour armour, Weapon weapon, int atk, int def) {
         this.name = name;
@@ -15,6 +16,17 @@ public class Player {
         this.weapon = weapon;
         this.atk = atk;
         this.def = def;
+    }
+//make this have more meaning
+    public int attack(int attackRoll) {
+        int damage = attackRoll;
+        System.out.println("Atacking for " + damage + " damage");
+        return damage;
+    }
+
+    public void defend() {
+        System.out.println("Stance set to defend");
+        this.defend = true;
     }
 
     public void takeDamage(int damage) {

@@ -22,6 +22,15 @@ public class Enemy {
         return rollDamage;
     }
 
+    public void takeDamage(int damage) {
+        System.out.println(this.getName() + " took " + damage + " damage");
+        System.out.println(this.name + ": " + this.health);
+        this.health -= damage;
+        if (this.health <= 0) {
+            System.out.println(this.getName() + " died");
+        }
+    }
+
     public String getName() {
         return name;
     }
@@ -39,7 +48,7 @@ public class Enemy {
     }
 
 }
-
+//goblin attacks- charge atk, slash, defend
 class Goblin extends Enemy {
     public Goblin() {
         super("Goblin", 26, new GoblinLeather(), new Spear(), 5, 2);
