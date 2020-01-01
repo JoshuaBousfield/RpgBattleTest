@@ -30,7 +30,7 @@ public class Battle {
             case 5: this.enemy = new Boar(); break;
         }
     }
-
+//add method for battle initiation to keep the battleStart() readable
     public void battleStart() {
         this.running = true;
         while (running) {
