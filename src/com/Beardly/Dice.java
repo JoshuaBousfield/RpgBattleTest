@@ -1,8 +1,7 @@
 package com.Beardly;
 
 import java.util.concurrent.ThreadLocalRandom;
-//TODO for dice min create base stats for the player and enemy, half of the base stat to check div 2 rounded to nearest int
-// -add base stats for atk, def etc.
+
 public class Dice {
     private int diceMax;
     private int diceMin;

@@ -47,6 +47,13 @@ public class Enemy {
         return weapon;
     }
 
+    public int getAtk() {
+        return atk;
+    }
+
+    public int getDef() {
+        return def;
+    }
 }
 //goblin attacks- charge atk, slash, defend
 class Goblin extends Enemy {

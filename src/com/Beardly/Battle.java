@@ -37,17 +37,7 @@ public class Battle {
             System.out.println("Rolling enemy");
             chooseEnemy();
             System.out.println("Rolling initiation");
-            int firstToGo = new Dice(2, 1).diceRoll();
-            switch (firstToGo) {
-                case 1:
-                    System.out.println("Player goes first");
-                    this.playerTurn = true;
-                    break;
-                case 2:
-                    System.out.println("monster goes first");
-                    this.playerTurn = false;
-                    break;
-            }
+            initiation(new Dice(2, 1).diceRoll());
             this.battleOn = true;
             //main battle loops here
             while (battleOn) {
@@ -87,14 +77,21 @@ public class Battle {
 
     private void battleEnemyTurn() {
         System.out.println(enemy.getName() + "'s Turn");
+        player.takeDamage(enemy.attack());
         this.playerTurn = true;
     }
 
-    public Player getPlayer() {
-        return player;
+    private void initiation(int dice) {
+        switch (dice) {
+            case 1:
+                System.out.println("Player goes first");
+                this.playerTurn = true;
+                break;
+            case 2:
+                System.out.println("monster goes first");
+                this.playerTurn = false;
+                break;
+        }
     }
 
-    public Enemy getEnemy() {
-        return enemy;
-    }
 }
