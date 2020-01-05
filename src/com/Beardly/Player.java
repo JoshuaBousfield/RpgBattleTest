@@ -1,6 +1,9 @@
 package com.Beardly;
 
+import java.util.ArrayList;
+
 public class Player {
+
     private String name;
     private int health;
     private Armour armour;
@@ -9,14 +12,16 @@ public class Player {
     private int def;
     private boolean defend;
 
-    public Player(String name, int health, Armour armour, Weapon weapon, int atk, int def) {
+    public Player(String name) {
+
         this.name = name;
         this.health = health;
         this.armour = armour;
         this.weapon = weapon;
-        this.atk = atk;
-        this.def = def;
+        this.atk = 5;
+        this.def = 3;
     }
+
 //make this have more meaning
     public int attack(int attackRoll) {
         int damage = attackRoll;

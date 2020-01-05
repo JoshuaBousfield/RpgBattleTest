@@ -3,9 +3,13 @@ package com.Beardly;
 public class Main {
 
     public static void main(String[] args) {
-        Player player = new Player("Josh", 40, new Leather(), new Sword(), 5, 3);
-        Battle battle = new Battle(player);
-        battle.battleStart();
+        Player player = new Player("Josh");
+        Inventory inventory = Inventory.addItem(new Leather());
+        player.storeItem(inventory);
+        player.printInventory();
+
+        //Battle battle = new Battle(player);
+        //battle.battleStart();
     }
 }
 //TODO create opponent class, with individual monsters inheriting from that class

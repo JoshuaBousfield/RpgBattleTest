@@ -49,7 +49,7 @@ public class Battle {
             }
         }
     }
-
+//add scanner.nextLine() after inputs
     private void battlePlayerTurn() {
         System.out.println("Player Turn");
         System.out.println("1: ATK 2: DEF");
